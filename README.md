@@ -1,4 +1,4 @@
-# StackTimer
+# StackTimer [![Build Status](https://travis-ci.org/rmasters/stack-timer.png?branch=master)](https://travis-ci.org/rmasters/stack-timer) [![Coverage Status](https://coveralls.io/repos/rmasters/stack-timer/badge.png?branch=master)](https://coveralls.io/r/rmasters/stack-timer?branch=master) [![Latest Stable Version](https://poser.pugx.org/rmasters/stack-timer/v/stable.png)](https://packagist.org/packages/rmasters/stack-timer)
 
 A simple [StackPHP][stackphp] middleware that reports on the time it takes the
 inner middlewares/app to run. Written to figure out what Stack can do :smiley:
