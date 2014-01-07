@@ -1,0 +1,24 @@
+{
+    "name": "rmasters/stack-time",
+    "description": "Simple StackPHP middleware for timing",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ross Masters",
+            "email": "ross@rossmasters.com"
+        }
+    ],
+    "require": {
+        "symfony/http-kernel": "2.4.1",
+        "symfony/http-foundation": "2.4.1"
+    },
+    "require-dev": {
+        "stack/run": "1.0.*",
+        "stack/builder": "1.0.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rmasters": "src/"
+        }
+    }
+}
