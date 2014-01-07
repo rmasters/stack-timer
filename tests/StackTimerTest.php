@@ -8,7 +8,7 @@ class StackTimerTest extends PHPUnit_Framework_TestCase
 {
     public function testInitialOptions()
     {
-        $timer = new StackTimer($this->getApp(), []);
+        $timer = new StackTimer($this->getApp(), array());
 
         $options = $timer->options();
 
@@ -16,7 +16,7 @@ class StackTimerTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($options['inject']);
 
         $this->assertArrayHasKey('callbacks', $options);
-        $this->assertEquals([], $options['callbacks']);
+        $this->assertEquals(array(), $options['callbacks']);
 
         $this->assertArrayHasKey('format', $options);
         $this->assertEquals(StackTimer::DEFAULT_FORMAT, $options['format']);
@@ -37,7 +37,7 @@ class StackTimerTest extends PHPUnit_Framework_TestCase
         $response = $this->getInjectingResponse();
         $app = $this->getHandledApp($request, $response);
 
-        $timer = new StackTimer($app, []);
+        $timer = new StackTimer($app, array());
 
         $pattern = '<html><body>Hello world</body></html>';
 
@@ -56,13 +56,13 @@ class StackTimerTest extends PHPUnit_Framework_TestCase
 
         $app = $this->getHandledApp($request, $response);
 
-        $timer = new StackTimer($app, [
+        $timer = new StackTimer($app, array(
             'inject' => true,
             'wrapper' => '<div>%s</div>',
             'format' => '{ms}ms',
             'injection' => '</body>',
             'inject_before' => true,
-        ]);
+        ));
 
         $response = $timer->handle($request);
     }
@@ -78,13 +78,13 @@ class StackTimerTest extends PHPUnit_Framework_TestCase
 
         $app = $this->getHandledApp($request, $response);
 
-        $timer = new StackTimer($app, [
+        $timer = new StackTimer($app, array(
             'inject' => true,
             'wrapper' => '<header>%s</header>',
             'format' => '{s}s',
             'injection' => '<html>',
             'inject_before' => false,
-        ]);
+        ));
 
         $response = $timer->handle($request);
     }
@@ -101,9 +101,9 @@ class StackTimerTest extends PHPUnit_Framework_TestCase
         $app = $this->getApp();
         $app->shouldReceive('handle')->once();
 
-        $timer = new StackTimer($app, [
+        $timer = new StackTimer($app, array(
             'callbacks' => array($callback, 'callback')
-        ]);
+        ));
 
         $timer->handle($request);
     }
