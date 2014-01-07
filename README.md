@@ -1,7 +1,7 @@
 # StackTimer
 
 A simple [StackPHP][stackphp] middleware that reports on the time it takes the
-inner middlewares/app to run.
+inner middlewares/app to run. Written to figure out what Stack can do :smiley:
 
 ## Usage
 
@@ -23,10 +23,7 @@ Pass an array with any of the following keys to
     body,
 -   **callbacks** (callable|callable[]) - an array of closures/callables that
     are passed the following arguments:
-
-    function(HttpFoundation\Request $request, float $microseconds) {
-    }
-
+    `function(HttpFoundation\Request $request, float $microseconds)`.
 -   **format** (string, default: `{ms}ms`) - the text to be injected, see list of
     replaced strings below.
 -   **wrapper** (string, default: `<div style="...">%s</div>`) - HTML the text
@@ -35,3 +32,5 @@ Pass an array with any of the following keys to
     this is passed through `preg_quote` and cannot contain regular expressions.
 -   **inject_before** (boolean, default: true) - whether to inject the snippet
     before the injection point (i.e. before `</body>`).
+
+[stackphp]: http://stackphp.org/
