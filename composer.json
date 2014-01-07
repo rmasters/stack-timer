@@ -16,6 +16,7 @@
         "stack/run": "1.0.*",
         "stack/builder": "1.0.*",
         "phpunit/phpunit": "3.*",
+        "satooshi/php-coveralls": "dev-master",
         "mockery/mockery": "dev-master"
     },
     "autoload": {
