@@ -43,6 +43,15 @@ class StackTime implements HttpKernelInterface
     }
 
     /**
+     * Get the options
+     * @return array Options
+     */
+    public function options()
+    {
+        return $this->options;
+    }
+
+    /**
      * Time a response
      * @param Symfony\Component\HttpFoundation\Request $request
      * @param int $type Request type
