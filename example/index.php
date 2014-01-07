@@ -5,7 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Rmasters\StackTime\StackTime;
+use Rmasters\StackTimer\StackTimer;
 
 // The application
 class App implements HttpKernelInterface
@@ -16,7 +16,7 @@ class App implements HttpKernelInterface
     }
 }
 
-// Configuration for StackTime
+// Configuration for StackTimer
 $cfg = [
     'inject' => true,
     'callbacks' => array(function(Request $request, $delta) {
@@ -25,7 +25,7 @@ $cfg = [
 ];
 
 // Build the stack
-$stack = (new Stack\Builder)->push('Rmasters\StackTime\StackTime', $cfg);
+$stack = (new Stack\Builder)->push('Rmasters\StackTimer\StackTimer', $cfg);
 $app = $stack->resolve(new App());
 
 // Run the app

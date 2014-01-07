@@ -1,4 +1,4 @@
-# StackTime
+# StackTimer
 
 A simple [StackPHP][stackphp] middleware that reports on the time it takes the
 inner middlewares/app to run.
@@ -9,7 +9,7 @@ Simply wrap your application in the timer middleware and the load time will be
 injected into the response body.
 
     $app = new App(); // implements HttpKernelInterface
-    $timer = new StackTime($app);
+    $timer = new StackTimer($app);
 
     $request = Request::createFromGlobals();
     $timer->handle($request)->send();
@@ -17,7 +17,7 @@ injected into the response body.
 ## Options
 
 Pass an array with any of the following keys to
-`StackTime::__construct(HttpKernelInterface, array)`:
+`StackTimer::__construct(HttpKernelInterface, array)`:
 
 -   **inject** (boolean, default: false) - whether to inject into the response
     body,

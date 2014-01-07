@@ -1,14 +1,14 @@
 <?php
 
-use Rmasters\StackTime\StackTime;
+use Rmasters\StackTimer\StackTimer;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Mockery as m;
 
-class StackTimeTest extends PHPUnit_Framework_TestCase
+class StackTimerTest extends PHPUnit_Framework_TestCase
 {
     public function testInitialOptions()
     {
-        $timer = new StackTime($this->getApp(), []);
+        $timer = new StackTimer($this->getApp(), []);
 
         $options = $timer->options();
 
@@ -19,13 +19,13 @@ class StackTimeTest extends PHPUnit_Framework_TestCase
         $this->assertEquals([], $options['callbacks']);
 
         $this->assertArrayHasKey('format', $options);
-        $this->assertEquals(StackTime::DEFAULT_FORMAT, $options['format']);
+        $this->assertEquals(StackTimer::DEFAULT_FORMAT, $options['format']);
 
         $this->assertArrayHasKey('wrapper', $options);
-        $this->assertEquals(StackTime::DEFAULT_WRAPPER, $options['wrapper']);
+        $this->assertEquals(StackTimer::DEFAULT_WRAPPER, $options['wrapper']);
 
         $this->assertArrayHasKey('injection', $options);
-        $this->assertEquals(StackTime::INJECT_END_BODY, $options['injection']);
+        $this->assertEquals(StackTimer::INJECT_END_BODY, $options['injection']);
 
         $this->assertArrayHasKey('inject_before', $options);
         $this->assertTrue($options['inject_before']);
@@ -37,7 +37,7 @@ class StackTimeTest extends PHPUnit_Framework_TestCase
         $response = $this->getInjectingResponse();
         $app = $this->getHandledApp($request, $response);
 
-        $timer = new StackTime($app, []);
+        $timer = new StackTimer($app, []);
 
         $pattern = '<html><body>Hello world</body></html>';
 
@@ -56,7 +56,7 @@ class StackTimeTest extends PHPUnit_Framework_TestCase
 
         $app = $this->getHandledApp($request, $response);
 
-        $timer = new StackTime($app, [
+        $timer = new StackTimer($app, [
             'inject' => true,
             'wrapper' => '<div>%s</div>',
             'format' => '{ms}ms',
@@ -78,7 +78,7 @@ class StackTimeTest extends PHPUnit_Framework_TestCase
 
         $app = $this->getHandledApp($request, $response);
 
-        $timer = new StackTime($app, [
+        $timer = new StackTimer($app, [
             'inject' => true,
             'wrapper' => '<header>%s</header>',
             'format' => '{s}s',
@@ -101,7 +101,7 @@ class StackTimeTest extends PHPUnit_Framework_TestCase
         $app = $this->getApp();
         $app->shouldReceive('handle')->once();
 
-        $timer = new StackTime($app, [
+        $timer = new StackTimer($app, [
             'callbacks' => array($callback, 'callback')
         ]);
 

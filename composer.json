@@ -1,5 +1,5 @@
 {
-    "name": "rmasters/stack-time",
+    "name": "rmasters/stack-timer",
     "description": "Simple StackPHP middleware for timing",
     "license": "MIT",
     "authors": [

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmasters\StackTime;
+namespace Rmasters\StackTimer;
 
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
  * Timing middleware
  * @todo Is it possible to time each middleware individually?
  */
-class StackTime implements HttpKernelInterface
+class StackTimer implements HttpKernelInterface
 {
     /** @var Symfony\Component\HttpKernel\HttpKernelInterface */
     protected $app;
