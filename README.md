@@ -33,6 +33,4 @@ Pass an array with any of the following keys to
 -   **inject_before** (boolean, default: true) - whether to inject the snippet
     before the injection point (i.e. before `</body>`).
 
-![Analytics](https://ga-beacon.appspot.com/UA-46903551-1/stack-timer/readme)
-
 [stackphp]: http://stackphp.org/
