@@ -8,6 +8,7 @@
             "email": "ross@rossmasters.com"
         }
     ],
+    "keywords": ["stack", "timing"],
     "require": {
         "symfony/http-kernel": "2.4.1",
         "symfony/http-foundation": "2.4.1"

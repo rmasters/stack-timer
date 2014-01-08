@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ee15d6c2bebaa63dd4ff71ba057e25b0",
+    "hash": "e98ff5b1113badb2319ca79e0d074c8a",
     "packages": [
         {
             "name": "psr/log",
